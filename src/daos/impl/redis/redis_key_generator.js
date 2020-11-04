@@ -83,6 +83,9 @@ const getRateLimiterKey = (name, interval, maxHits) => {
   return getKey(`limiter:${name}:${Math.floor(minuteOfDay / interval)}:${maxHits}`);
 };
 
+const getSlidingWindowRateLimiterKey = (name, interval, maxHits) => {
+  return getKey(`limiter:${interval}:${name}:${maxHits}`);
+};
 /**
  * Returns the Redis key used to store geo information for sites.
  *
